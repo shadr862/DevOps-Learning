@@ -24,4 +24,4 @@ chmode o-x script.sh o for other
 
 rm -rf ./name->uninstall
 dpkg -l | grep git 
-curl -I www.google.com
+curl -I www.facebook.com
