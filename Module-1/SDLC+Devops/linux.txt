@@ -1,0 +1,27 @@
+bash
+whoami
+pdw
+ls
+ls -a
+
+mkdir name
+cd name->acess directory
+cd .. ->back
+nano script.sh ->ctr+o for save->ctr+x for exit
+top->task manager exit ->q
+
+ls -l
+chmode +x filename
+chmode 777
+
+ls -l script.sh
+cat – Shad.exe->execute file
+
+remove
+chmode u-x script.sh u for user
+chmode g-x script.sh g for group
+chmode o-x script.sh o for other
+
+rm -rf ./name->uninstall
+dpkg -l | grep git 
+curl -I www.google.com

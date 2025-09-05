@@ -1,0 +1,20 @@
+bash
+ssh-keygen
+/mnt/g/DevOps Learning/Module-1/Git Workflow/id_rsa
+ls -al
+cat id_rsa.pub
+copy the key and paste in setting->SSH and GPs Key->Add the Key
+git clone url
+
+git branch->where you at this position
+git branch -a->show all branch
+code .->open vs code
+git status ->check for any thing change
+git checkout -b "feater_branch"->new branch
+git checkout branch_name->for moving to that branch
+git log->history of commit
+git add  .->add all file
+git commit -m "change some things"
+git push origin feater_branch
+pull request to dev =also can add reviwer
+44 min
