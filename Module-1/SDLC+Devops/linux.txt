@@ -1,27 +1,49 @@
-bash
-whoami
-pdw
-ls
-ls -a
+User & System Info
+whoami      # Show current logged-in user
+pwd         # Show current directory path
 
-mkdir name
-cd name->acess directory
-cd .. ->back
-nano script.sh ->ctr+o for save->ctr+x for exit
-top->task manager exit ->q
+File & Directory Management
+ls          # List files in directory
+ls -a       # List all files (including hidden)
+ls -l       # List files with details (permissions, owner, size)
 
-ls -l
-chmode +x filename
-chmode 777
 
-ls -l script.sh
-cat – Shad.exe->execute file
+Create and navigate:
 
-remove
-chmode u-x script.sh u for user
-chmode g-x script.sh g for group
-chmode o-x script.sh o for other
+mkdir name      # Create new directory
+cd name         # Enter directory
+cd ..           # Go back one level
 
-rm -rf ./name->uninstall
-dpkg -l | grep git 
-curl -I www.google.com
+Editing Files
+nano script.sh  # Open/create file in nano editor
+# In nano:
+# Ctrl+O -> Save
+# Ctrl+X -> Exit
+
+
+View file contents:
+
+cat Shad.exe    # Show file content (or execute if script/binary)
+
+Process Management
+top   # Task manager (CPU/memory usage)
+# Exit with: q
+
+Permissions
+chmod +x filename      # Make file executable
+chmod 777 filename     # Full permission (rwx for all)
+ls -l script.sh        # Check file permissions
+
+
+Remove permissions:
+
+chmod u-x script.sh    # Remove execute for user
+chmod g-x script.sh    # Remove execute for group
+chmod o-x script.sh    # Remove execute for others
+
+File/Folder Removal
+rm -rf ./name   # Delete folder and contents
+
+Package & Network
+dpkg -l | grep git      # Check if git is installed
+curl -I www.google.com  # Fetch HTTP headers (test connection)

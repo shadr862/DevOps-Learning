@@ -1,20 +1,67 @@
-bash
-ssh-keygen
-/mnt/g/DevOps Learning/Module-1/Git Workflow/id_rsa
-ls -al
-cat id_rsa.pub
-copy the key and paste in setting->SSH and GPs Key->Add the Key
-git clone url
+Git & SSH Commands (Cheat Sheet)
+SSH Setup
+ssh-keygen -t ed25519 -C "your_email@example.com"   # Generate SSH key
 
-git branch->where you at this position
-git branch -a->show all branch
-code .->open vs code
-git status ->check for any thing change
-git checkout -b "feater_branch"->new branch
-git checkout branch_name->for moving to that branch
-git log->history of commit
-git add  .->add all file
-git commit -m "change some things"
-git push origin feater_branch
-pull request to dev =also can add reviwer
-44 min
+
+Add the key to the agent:
+
+eval "$(ssh-agent -s)"    # Start ssh-agent
+ssh-add ~/.ssh/id_ed25519 # Add the private key
+ssh-add -l                # Verify keys loaded
+
+
+Show your public key:
+
+cat ~/.ssh/id_ed25519.pub
+
+
+Test connection with GitHub:
+
+ssh -T git@github.com
+
+
+👉 Copy the public key → GitHub → Settings → SSH and GPG Keys → Add New Key
+
+Basic Linux Commands
+ls -al     # Show all files (including hidden)
+code .     # Open current folder in VS Code
+
+Git Basics
+git clone <url>                  # Clone a repository
+git status                       # Check changes
+git add .                        # Add all changes
+git commit -m "message"          # Commit changes
+git log                          # Full commit history
+git log --oneline                # Short commit history
+
+Branching
+git branch                       # Show branches (current highlighted)
+git branch -a                    # Show all branches (local + remote)
+git checkout -b feature_branch   # Create & switch to new branch
+git checkout branch_name         # Switch to existing branch
+
+Push & Reset
+git push origin feature_branch   # Push branch to remote
+git reset --hard <commit_id>     # Reset to specific commit
+
+Remotes
+git remote -v    # Show remotes
+git remote --help # Remote help
+
+Syncing & Merging
+git fetch                   # Fetch updates
+git merge branch_name       # Merge branch into current
+git rebase branch_name      # Reapply commits on top of another branch
+
+
+If conflict occurs:
+
+nano conflict_file_name     # Open conflict file and resolve
+
+Interactive Rebase
+git rebase -i HEAD~2        # Edit last 2 commits
+
+
+reword → change commit message
+
+squash → combine commits
